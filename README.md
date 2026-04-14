@@ -9,6 +9,8 @@ English Reveal.js deck and demo repo for the Amazon talk on **April 22, 2026**.
 - `sources/ai-individual.md` — structured markdown notes from the Superlinear article for individuals
 - `sources/ai-mastery.md` — structured markdown notes from the Superlinear article for tech workers / teams
 - `sources/presentation-building-notes.md` — synthesis used to build the deck
+- `docs/LAUNCH_READINESS.md` — release and QA notes
+- `docs/LEARNINGS.md` — final messaging and structure learnings
 
 ## Run Locally
 
