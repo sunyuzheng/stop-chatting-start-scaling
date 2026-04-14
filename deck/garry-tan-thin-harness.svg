@@ -1,0 +1,37 @@
+<svg width="1200" height="1344" viewBox="0 0 1200 1344" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1344" rx="36" fill="#FFFFFF"/>
+  <circle cx="73" cy="72" r="44" fill="#E5E7EB"/>
+  <circle cx="73" cy="58" r="15" fill="#6B7280"/>
+  <path d="M43 98C49 80 63 72 73 72C83 72 97 80 103 98" fill="#6B7280"/>
+  <text x="136" y="64" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700">Garry Tan</text>
+  <circle cx="318" cy="54" r="14" fill="#3B82F6"/>
+  <path d="M311 54L316 59L326 47" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="340" y="36" width="30" height="30" rx="6" fill="#F97316"/>
+  <text x="349" y="58" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Y</text>
+  <text x="136" y="104" fill="#6B7280" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="500">@garrytan</text>
+  <rect x="865" y="28" width="217" height="64" rx="32" fill="#111827"/>
+  <text x="916" y="70" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">Subscribe</text>
+  <text x="117" y="250" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="74" font-weight="800">Thin Harness, Fat Skills</text>
+  <g fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="500">
+    <circle cx="34" cy="334" r="15" stroke="#64748B" stroke-width="3" fill="none"/>
+    <path d="M23 346L17 355" stroke="#64748B" stroke-width="3" stroke-linecap="round"/>
+    <text x="62" y="343">115</text>
+    <path d="M286 324V344" stroke="#64748B" stroke-width="3" stroke-linecap="round"/>
+    <path d="M286 324L274 336" stroke="#64748B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M286 344L298 332" stroke="#64748B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="314" y="343">441</text>
+    <path d="M561 323C571 307 595 309 602 326C608 309 633 307 643 323C652 337 643 352 602 383C561 352 552 337 561 323Z" stroke="#64748B" stroke-width="3" fill="none"/>
+    <text x="670" y="343">3.2K</text>
+    <path d="M858 348V314M874 348V299M890 348V322M906 348V308" stroke="#64748B" stroke-width="5" stroke-linecap="round"/>
+    <text x="924" y="343">978K</text>
+  </g>
+  <line x1="0" y1="390.5" x2="1200" y2="390.5" stroke="#E5E7EB"/>
+  <text x="42" y="482" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="400">Steve Yegge says people using AI coding agents are "10x to 100x as</text>
+  <text x="42" y="536" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="400">productive as engineers using Cursor and chat today, and roughly 1000x</text>
+  <text x="42" y="590" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="400">as productive as Googlers were back in 2005."</text>
+  <text x="42" y="720" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="400">That's a real number. I've seen it. I've lived it. But when people hear it,</text>
+  <text x="42" y="774" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="400">they reach for the wrong explanation. Better models. Smarter Claude.</text>
+  <text x="42" y="828" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="400">More parameters. The 2x people and the 100x people are using the same</text>
+  <text x="42" y="882" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="400">models. The difference isn't intelligence. It's architecture — and it fits on</text>
+  <text x="42" y="936" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="400">an index card.</text>
+</svg>

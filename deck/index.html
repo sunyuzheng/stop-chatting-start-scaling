@@ -184,6 +184,38 @@
       object-fit: cover;
     }
 
+    .stack {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .tight-list {
+      margin: 0;
+      padding-left: 1.1em;
+    }
+
+    .tight-list li {
+      margin: 0.22em 0;
+    }
+
+    .mini-contrast {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .tweet-frame {
+      height: 100%;
+      min-height: 520px;
+      background: #fff;
+    }
+
+    .tweet-frame img {
+      object-fit: contain;
+      background: #fff;
+    }
+
     .portrait-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -316,36 +348,49 @@
 
 <section>
   <div class="eyebrow">The Gap</div>
-  <h2>Most people get 30%. A few get 10x.</h2>
-  <div class="grid-2" style="margin-top: 18px; align-items: start;">
-    <div>
-      <div class="quote">
-        <p style="margin:0; font-size:0.58em; line-height:1.65;">
-          Same model. Different results.
-          The difference is not access. The difference is method.
-        </p>
+  <h2>It may actually be 1000x. I just do not want to sound dramatic.</h2>
+  <div class="grid-2" style="margin-top: 18px; align-items: stretch;">
+    <div class="stack">
+      <div class="accent">
+        <div class="pill">What Actually Changes</div>
+        <ul class="tight-list muted">
+          <li><strong>Same models.</strong> Very different outcomes.</li>
+          <li><strong>The gap is not intelligence.</strong> It is the harness.</li>
+          <li><strong>Architecture is the multiplier.</strong> That is why the ceiling moves so far.</li>
+        </ul>
       </div>
-      <div class="flow">
-        <div class="flow-box"><strong>Typical pattern</strong><br>ask<br>inspect<br>rewrite<br>repeat</div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-box"><strong>Builder pattern</strong><br>define target<br>load context<br>run loop<br>review outcome</div>
+      <div class="mini-contrast">
+        <div class="card" style="height:100%;">
+          <div class="pill">Thin Harness</div>
+          <ul class="tight-list muted">
+            <li>ask</li>
+            <li>inspect</li>
+            <li>rewrite</li>
+            <li>repeat</li>
+          </ul>
+        </div>
+        <div class="dark-card" style="height:100%;">
+          <div class="pill" style="background:rgba(255,255,255,0.08); color:#fdba74;">Fat Skills</div>
+          <ul class="tight-list" style="color:#dbe5f1;">
+            <li>specify</li>
+            <li>load context</li>
+            <li>delegate</li>
+            <li>verify</li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="dark-card">
-      <div class="pill" style="background:rgba(255,255,255,0.08); color:#fdba74;">The Core Point</div>
-      <ul style="color:#dbe5f1;">
-        <li>Chat improves local tasks.</li>
-        <li>Agents change the operating model.</li>
-        <li>That is why one feels incremental and the other can feel transformative.</li>
-      </ul>
+    <div class="image-frame tweet-frame">
+      <img src="./garry-tan-thin-harness.svg" alt="Tweet-style image referencing Thin Harness, Fat Skills and the productivity gap with AI agents.">
     </div>
   </div>
   <aside class="notes">
-    Use this slide to establish the performance gap.
-    Same model, different results.
-    Do not over-explain. Just land the pattern:
-    most people are in an ask inspect rewrite loop.
-    Builders define the target, load context, let the system run, then review.
+    Use this slide to widen the ambition without sounding inflated.
+    The point is not to defend a number.
+    The point is that the real spread is much larger than most people think.
+    Same model, different harness.
+    Thin harness means ask, inspect, rewrite, repeat.
+    Fat skills means specify, load context, delegate, and verify.
   </aside>
 </section>
 
