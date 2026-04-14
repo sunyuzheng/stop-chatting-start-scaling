@@ -794,8 +794,8 @@
 <section>
   <div class="eyebrow">Methods</div>
   <h2>The methods behind those five upgrades</h2>
-  <div class="grid-3" style="margin-top:18px; align-items:start;">
-    <div class="card">
+  <div style="display:grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap:16px; margin-top:18px; align-items:start;">
+    <div class="card" style="grid-column: span 2;">
       <div class="pill">1. Calibration</div>
       <ul class="muted">
         <li>correct mental models</li>
@@ -803,7 +803,7 @@
         <li>real-work capability probing</li>
       </ul>
     </div>
-    <div class="card">
+    <div class="card" style="grid-column: span 2;">
       <div class="pill">2. Usable Output</div>
       <ul class="muted">
         <li>document-first standards</li>
@@ -811,7 +811,7 @@
         <li>outcome-oriented specs</li>
       </ul>
     </div>
-    <div class="card">
+    <div class="card" style="grid-column: span 2;">
       <div class="pill">3. Delegation</div>
       <ul class="muted">
         <li>task spectrum mapping</li>
@@ -819,9 +819,7 @@
         <li>agentic loops for full tasks</li>
       </ul>
     </div>
-  </div>
-  <div class="grid-3" style="margin-top:16px; align-items:start;">
-    <div class="card">
+    <div class="card" style="grid-column: 2 / span 2;">
       <div class="pill">4. Memory</div>
       <ul class="muted">
         <li>personal context architecture</li>
@@ -829,7 +827,7 @@
         <li>workflow migration, one at a time</li>
       </ul>
     </div>
-    <div class="accent" style="grid-column: span 2;">
+    <div class="card" style="grid-column: 4 / span 2;">
       <div class="pill">5. Thinking Partner</div>
       <ul class="muted">
         <li>cross-domain leverage</li>
