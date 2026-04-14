@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef4ff 100%);
+  color: #102039;
+}
+
+.shell {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 48px 24px 72px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ff9900;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 12px 0 16px;
+  font-size: 42px;
+  line-height: 1.05;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.lede,
+.panel p,
+.card p,
+.back,
+.policy-list li {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.card,
+.panel {
+  background: #fff;
+  border: 1px solid #d8e0eb;
+  border-radius: 16px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 8px 24px rgba(16, 32, 57, 0.06);
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #e9f2ff;
+  color: #1d4ed8;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.promise {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.subtle {
+  color: #53647d;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 24px;
+}
+
+.policy-list {
+  padding-left: 22px;
+}

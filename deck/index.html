@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stop Chatting, Start Scaling</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/white.css">
+
+  <style>
+    :root {
+      --ink: #0f172a;
+      --muted: #5b6b82;
+      --line: #d9e2ec;
+      --paper: #f8fafc;
+      --orange: #ff9900;
+      --orange-2: #c97800;
+      --blue: #e8f0ff;
+    }
+
+    html { height: 100%; overflow: hidden; }
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(255, 153, 0, 0.10), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.10), transparent 26%),
+        var(--paper);
+    }
+
+    .reveal {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      color: var(--ink);
+    }
+
+    .reveal h1,
+    .reveal h2,
+    .reveal h3,
+    .reveal h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      text-transform: none;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 0.28em;
+    }
+
+    .reveal h1 { font-size: 1.82em; font-weight: 800; line-height: 1.04; }
+    .reveal h2 { font-size: 1.16em; font-weight: 700; line-height: 1.12; }
+    .reveal h3 { font-size: 0.72em; font-weight: 700; line-height: 1.2; }
+    .reveal p { font-size: 0.52em; line-height: 1.52; margin-bottom: 0.58em; }
+    .reveal ul, .reveal ol { margin: 0 0 0 1.1em; font-size: 0.51em; line-height: 1.48; }
+    .reveal li { margin: 0.30em 0; }
+    .reveal li::marker { color: var(--orange); }
+    .reveal strong { color: var(--ink); }
+    .reveal code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      color: var(--orange-2);
+      background: rgba(255, 153, 0, 0.08);
+      padding: 0.08em 0.26em;
+      border-radius: 0.28em;
+    }
+
+    .reveal .slides section {
+      padding: 18px 48px 16px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .eyebrow {
+      font-size: 0.39em;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 800;
+      margin-bottom: 1em;
+    }
+
+    .dark { color: #fff; }
+    .dark h1, .dark h2, .dark h3, .dark h4, .dark strong { color: #fff; }
+
+    .hero,
+    .divider {
+      background:
+        radial-gradient(circle at top left, rgba(255, 153, 0, 0.20), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(96, 165, 250, 0.14), transparent 28%),
+        linear-gradient(135deg, #0f172a 0%, #111827 58%, #1e293b 100%);
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 16px;
+      text-align: left;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card,
+    .accent,
+    .dark-card,
+    .soft {
+      border-radius: 18px;
+      padding: 18px 20px;
+      box-sizing: border-box;
+      text-align: left;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+    }
+
+    .accent {
+      background: linear-gradient(180deg, #fffaf3, #fff7ed);
+      border: 2px solid rgba(255, 153, 0, 0.34);
+      box-shadow: 0 12px 28px rgba(255, 153, 0, 0.10);
+    }
+
+    .soft {
+      background: linear-gradient(180deg, #eff6ff, #f8fbff);
+      border: 1px solid #cfe2ff;
+    }
+
+    .dark-card {
+      background: rgba(15, 23, 42, 0.94);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      color: #dbe5f1;
+    }
+
+    .metric {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.72em;
+      line-height: 1;
+      color: var(--orange);
+      margin-bottom: 0.06em;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 0.28em 0.78em;
+      border-radius: 999px;
+      font-size: 0.35em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 800;
+      background: var(--blue);
+      color: #1d4ed8;
+      margin-bottom: 0.9em;
+    }
+
+    .step {
+      font-size: 0.43em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 800;
+      margin-bottom: 0.8em;
+    }
+
+    .muted { color: var(--muted); }
+    .orange { color: var(--orange); }
+    .small { font-size: 0.40em; }
+
+    .image-frame {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+    }
+
+    .image-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .portrait-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .portrait-card {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+    }
+
+    .portrait-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      background: #edf2f7;
+    }
+
+    .portrait-copy {
+      padding: 14px 16px 16px;
+    }
+
+    .quote {
+      border-left: 4px solid var(--orange);
+      padding: 16px 18px;
+      background: rgba(255, 255, 255, 0.80);
+      border-radius: 0 16px 16px 0;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+    }
+
+    .flow {
+      display: flex;
+      gap: 10px;
+      align-items: stretch;
+      margin-top: 12px;
+    }
+
+    .flow-box {
+      flex: 1;
+      border-radius: 14px;
+      padding: 13px 12px;
+      background: #fff;
+      border: 1px solid var(--line);
+      font-size: 0.45em;
+      line-height: 1.35;
+    }
+
+    .flow-arrow {
+      display: flex;
+      align-items: center;
+      font-size: 0.82em;
+      color: var(--orange);
+      font-weight: 800;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.48em;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--orange-2);
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section class="dark hero">
+  <div style="text-align:center; padding-top: 44px;">
+    <div class="eyebrow">Amazon · April 22, 2026</div>
+    <h1 style="max-width: 980px; margin: 0 auto 0.42em;">
+      Stop Chatting, Start Scaling:<br>
+      <span class="orange">How AI Agents Transform Work</span>
+    </h1>
+    <p style="max-width: 760px; margin: 0 auto 1.12em; color:#cbd5e1; font-size:0.56em;">
+      The real shift is not better answers in a chat window.
+      It is a different way of organizing work.
+    </p>
+    <div style="width:76px; height:3px; background:var(--orange); border-radius:999px; margin: 0 auto 18px;"></div>
+    <p class="small" style="color:#94a3b8; margin:0;">Yuzheng Sun</p>
+  </div>
+  <aside class="notes">
+    Open with the core claim immediately.
+    This talk is not about model cleverness.
+    It is about a change in work design.
+    Set up the phrase I will keep repeating: chat helps with tasks, agents change the operating model.
+  </aside>
+</section>
+
+<section>
+  <div class="eyebrow">Agenda</div>
+  <h2>Three claims</h2>
+  <div class="grid-3" style="margin-top: 18px;">
+    <div class="card">
+      <div class="metric">01</div>
+      <p><strong>Chat and agents are different work methods.</strong><br><span class="muted">Not the same thing with different branding.</span></p>
+    </div>
+    <div class="card">
+      <div class="metric">02</div>
+      <p><strong>Agents matter because they compound.</strong><br><span class="muted">Context, files, tests, and memory survive beyond a single session.</span></p>
+    </div>
+    <div class="card">
+      <div class="metric">03</div>
+      <p><strong>The aspiration is identity change.</strong><br><span class="muted">From AI user to AI builder.</span></p>
+    </div>
+  </div>
+  <aside class="notes">
+    I want the audience to remember three things.
+    First, chat and agents are different work methods.
+    Second, compounding is the real reason agents matter.
+    Third, the destination is not more usage. It is a different professional identity.
+  </aside>
+</section>
+
+<section>
+  <div class="eyebrow">The Gap</div>
+  <h2>Most people get 30%. A few get 10x.</h2>
+  <div class="grid-2" style="margin-top: 18px; align-items: start;">
+    <div>
+      <div class="quote">
+        <p style="margin:0; font-size:0.58em; line-height:1.65;">
+          Same model. Different results.
+          The difference is not access. The difference is method.
+        </p>
+      </div>
+      <div class="flow">
+        <div class="flow-box"><strong>Typical pattern</strong><br>ask<br>inspect<br>rewrite<br>repeat</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box"><strong>Builder pattern</strong><br>define target<br>load context<br>run loop<br>review outcome</div>
+      </div>
+    </div>
+    <div class="dark-card">
+      <div class="pill" style="background:rgba(255,255,255,0.08); color:#fdba74;">The Core Point</div>
+      <ul style="color:#dbe5f1;">
+        <li>Chat improves local tasks.</li>
+        <li>Agents change the operating model.</li>
+        <li>That is why one feels incremental and the other can feel transformative.</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">
+    Use this slide to establish the performance gap.
+    Same model, different results.
+    Do not over-explain. Just land the pattern:
+    most people are in an ask inspect rewrite loop.
+    Builders define the target, load context, let the system run, then review.
+  </aside>
+</section>
+
+<section>
+  <div class="eyebrow">Analogy</div>
+  <h2>AI is the electric motor story again</h2>
+  <div class="grid-3" style="margin-top: 18px;">
+    <div class="card">
+      <div class="step">Step 1</div>
+      <h3>New tool</h3>
+      <ul class="muted">
+        <li>drop AI into the old workflow</li>
+        <li>keep everything else the same</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="step">Step 2</div>
+      <h3>Expected result</h3>
+      <ul class="muted">
+        <li>faster local tasks</li>
+        <li>incremental gain</li>
+      </ul>
+    </div>
+    <div class="accent">
+      <div class="step">Step 3</div>
+      <h3>Real result</h3>
+      <ul class="muted">
+        <li>redesign work around what AI can own</li>
+        <li>that is where step-change value comes from</li>
+      </ul>
+    </div>
+  </div>
+  <div class="soft" style="margin-top: 16px;">
+    <p style="margin:0;">
+      <strong>Chat = swap in a new tool.</strong>
+      <strong>Agents = redesign the line.</strong>
+    </p>
+  </div>
+  <aside class="notes">
+    This is the slide that makes the abstraction legible.
+    Most organizations react to AI the same way factories first reacted to the electric motor:
+    new tool, old workflow.
+    That gives local efficiency.
+    Real transformation starts when the line itself is redesigned.
+  </aside>
+</section>
+
+<section class="dark divider">
+  <div style="text-align:center; padding-top: 68px;">
+    <div class="eyebrow">Core Contrast</div>
+    <h2 style="font-size:1.48em; max-width: 860px; margin: 0 auto 0.48em;">
+      Chat gives advice.<br>
+      Cursor and agents work inside the environment.
+    </h2>
+  </div>
+  <aside class="notes">
+    Pause here.
+    This is the hinge sentence for the rest of the talk.
+    Chat gives advice.
+    Agents operate inside an environment with files, tools, and checks.
+  </aside>
+</section>
+
+<section>
+  <div class="eyebrow">Comparison</div>
+  <h2>Why the work method is fundamentally different</h2>
+  <div class="grid-3" style="margin-top:18px;">
+    <div class="card">
+      <div class="pill">Chat</div>
+      <h3>Advice</h3>
+      <ul class="muted">
+        <li>limited context</li>
+        <li>output stays in chat</li>
+        <li>you drive every turn</li>
+      </ul>
+    </div>
+    <div class="accent">
+      <div class="pill">Agent</div>
+      <h3>Execution</h3>
+      <ul class="muted">
+        <li>reads project context</li>
+        <li>writes files and tests</li>
+        <li>can run and retry</li>
+      </ul>
+    </div>
+    <div class="soft">
+      <div class="pill">Takeaway</div>
+      <h3>Different leverage</h3>
+      <ul class="muted">
+        <li>chat improves tasks</li>
+        <li>agents improve systems</li>
+        <li>systems can compound</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">
+    Walk left to right.
+    Chat is limited context, output trapped in the conversation, and a human driving every turn.
+    Agent mode reads the project, writes artifacts, and can run and retry.
+    End on the takeaway card: tasks versus systems.
+  </aside>
+</section>
+
+<section>
+  <div class="eyebrow">Demo</div>
+  <h2>The demo is one policy change across a real mini-system</h2>
+  <div class="grid-2" style="margin-top:18px;">
+    <div class="accent">
+      <div class="pill">Business Request</div>
+      <ul class="muted">
+        <li>change oversized shipping from <code>2-day</code> to <code>3-5 business days</code></li>
+        <li>keep a Prime exception for the top 20 metro areas</li>
+        <li>update every customer-facing surface</li>
+        <li>make the next policy change cheaper</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="pill">Why This Demo Works</div>
+      <ul class="muted">
+        <li>multiple files</li>
+        <li>copy plus implementation</li>
+        <li>tests and verification</li>
+        <li>a second request that exposes whether value compounds</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">
+    Introduce the demo as a policy change across a tiny but real system.
+    The point is not code sophistication.
+    The point is that the task requires context, execution, consistency, and a second round of change.
+    That is why it is a good agent demo.
+  </aside>
+</section>
+
+<section>
+  <div class="eyebrow">Starter Repo</div>
+  <h2>Before the agent runs</h2>
+  <div class="grid-4" style="margin-top:18px;">
+    <div class="card">
+      <div class="step">Surface 1</div>
+      <h3>Checkout</h3>
+      <p class="muted">Customer-facing shipping promise.</p>
+    </div>
+    <div class="card">
+      <div class="step">Surface 2</div>
+      <h3>Order confirmation</h3>
+      <p class="muted">Another place the same promise appears.</p>
+    </div>
+    <div class="card">
+      <div class="step">Surface 3</div>
+      <h3>Help center</h3>
+      <p class="muted">Support copy with the same policy embedded.</p>
+    </div>
+    <div class="accent">
+      <div class="step">Problem</div>
+      <h3>Hardcoded drift</h3>
+      <p class="muted">The policy is duplicated. Change is expensive and error-prone.</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:16px;">
+    <p style="margin:0;">
+      This is where chat stalls: it can suggest where to edit, but it does not leave behind a better system.
+    </p>
+  </div>
+  <aside class="notes">
+    Show the starter repo here.
+    The audience should see one business rule duplicated across checkout, email, help center, and docs.
+    Stress that this is exactly the kind of change work that keeps happening in real teams.
+    The problem is not changing text. The problem is changing the system safely.
+  </aside>
+</section>
+
+<section>
+  <div class="eyebrow">Live Prompt</div>
+  <h2>What I ask the agent to do</h2>
+  <div class="soft" style="margin-top:18px;">
+    <p style="font-size:0.54em; margin:0 0 10px;"><strong>Implement the policy change across the repo.</strong></p>
+    <ul class="muted">
+      <li>update the oversized shipping promise to <code>3-5 business days</code></li>
+      <li>preserve the Prime exception for the top 20 metro areas</li>
+      <li>remove scattered hardcoded copy</li>
+      <li>create one shared policy source</li>
+      <li>update tests, run them, and fix failures</li>
+    </ul>
+  </div>
+  <div class="grid-2" style="margin-top:16px;">
+    <div class="card">
+      <div class="pill">What Chat Can Do</div>
+      <p class="muted">Give advice, sample code, and likely edit locations.</p>
+    </div>
+    <div class="accent">
+      <div class="pill">What The Agent Can Do</div>
+      <p class="muted">Read the repo, apply the edits, run checks, and leave a cleaner architecture behind.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    Read the request in business language.
+    Then make the contrast explicit:
+    chat can suggest, but the agent can inspect the repo, implement, test, and repair.
+    This is the slide to set up the live action in Cursor.
+  </aside>
+</section>
+
+<section>
+  <div class="eyebrow">What Just Happened</div>
+  <h2>The first run created assets</h2>
+  <div class="grid-3" style="margin-top:18px;">
+    <div class="card">
+      <div class="step">Asset 1</div>
+      <h3>Policy module</h3>
+      <p class="muted">The business rule now lives in one place.</p>
+    </div>
+    <div class="card">
+      <div class="step">Asset 2</div>
+      <h3>Shared customer copy</h3>
+      <p class="muted">Checkout, email, and help center stay aligned.</p>
+    </div>
+    <div class="accent">
+      <div class="step">Asset 3</div>
+      <h3>Tests</h3>
+      <p class="muted">The next change is now safer and cheaper.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    After the first run, do not talk about speed.
+    Talk about assets.
+    One policy source.
+    Shared customer copy.
+    Tests.
+    These are the things that make the next request cheaper than the first one.
+  </aside>
+</section>
+
+<section>
+  <div class="eyebrow">Compounding</div>
+  <h2>The second request is the real demo</h2>
+  <div class="grid-2" style="margin-top:18px;">
+    <div class="accent">
+      <div class="pill">Follow-up Request</div>
+      <ul class="muted">
+        <li>expand the Prime metro exception from top 20 to top 40</li>
+        <li>add a remote-state exception for Alaska and Hawaii</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="pill">The Point</div>
+      <p class="muted">
+        If the first run was only a patch, the second change is expensive again.
+        If the first run created structure, the second change is cheap.
+      </p>
+      <p class="muted"><strong>That is compounding.</strong></p>
+    </div>
+  </div>
+  <aside class="notes">
+    This is the real proof slide.
+    The first request is not enough.
+    The second request reveals whether we created structure or just patched files.
+    If the second change is cheap, then the system improved.
+    That is the definition of compounding in this talk.
+  </aside>
+</section>
+
+<section>
+  <div class="eyebrow">Maturity</div>
+  <h2>From AI user to AI builder</h2>
+  <div class="grid-5" style="display:grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap:12px; margin-top:18px; text-align:left;">
+    <div class="card">
+      <div class="step">1</div>
+      <h3>Calibration</h3>
+      <p class="muted">Good judgment about what AI can and cannot do.</p>
+    </div>
+    <div class="card">
+      <div class="step">2</div>
+      <h3>Usable output</h3>
+      <p class="muted">AI work can enter the workflow directly.</p>
+    </div>
+    <div class="card">
+      <div class="step">3</div>
+      <h3>Delegation</h3>
+      <p class="muted">Complete tasks move to agentic loops.</p>
+    </div>
+    <div class="card">
+      <div class="step">4</div>
+      <h3>Memory</h3>
+      <p class="muted">Experience accumulates into reusable system behavior.</p>
+    </div>
+    <div class="accent">
+      <div class="step">5</div>
+      <h3>Thinking partner</h3>
+      <p class="muted">AI starts surfacing better options, tradeoffs, and blind spots.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    Use this as the aspiration framework, not as the main content.
+    The talk so far explained the first four steps in practical terms.
+    The fifth step is what becomes possible after context, delegation, and memory are in place.
+  </aside>
+</section>
+
+<section class="dark divider">
+  <div style="text-align:center; padding-top: 68px;">
+    <div class="eyebrow">Next Step</div>
+    <h2 style="font-size:1.46em; max-width: 920px; margin: 0 auto 0.48em;">
+      This is not a tool lesson.<br>
+      It is a capability upgrade path.
+    </h2>
+  </div>
+  <aside class="notes">
+    Transition out of the demo and into the program.
+    The point is that this is not merely about using Cursor well.
+    It is about how people upgrade from ad hoc AI usage to systematic building.
+  </aside>
+</section>
+
+<section>
+  <div class="eyebrow">Our Program</div>
+  <h2>What we aim to deliver</h2>
+  <div class="grid-2" style="margin-top:18px; align-items:start;">
+    <div>
+      <div class="grid-2" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+        <div class="card">
+          <div class="pill">Typical Tool Training</div>
+          <ul class="muted">
+            <li>teaches buttons</li>
+            <li>chases the latest tools</li>
+            <li>ages quickly</li>
+            <li>often stops at “I understand it”</li>
+          </ul>
+        </div>
+        <div class="accent">
+          <div class="pill">Our Approach</div>
+          <ul class="muted">
+            <li>teaches method and judgment</li>
+            <li>builds a durable capability line</li>
+            <li>targets behavior change</li>
+            <li>develops a systematic way of working</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card" style="margin-top:16px;">
+        <p style="margin:0;">
+          For a company, this is not a one-off training event. It is the starting point for core talent upgrade:
+          spreadable, retainable, and sustainable.
+        </p>
+      </div>
+    </div>
+    <div class="image-frame" style="height:430px;">
+      <img src="course-page.png" alt="Superlinear Academy course page">
+    </div>
+  </div>
+  <aside class="notes">
+    Keep this concise.
+    The distinction is simple:
+    typical tool training teaches buttons and trends.
+    Our approach teaches method, judgment, and a repeatable way of working.
+    Use the course page screenshot as proof this is a real program, not a concept.
+  </aside>
+</section>
+
+<section>
+  <div class="eyebrow">Why Us</div>
+  <h2>Built for high-standard operators</h2>
+  <div class="grid-3" style="margin-top:18px;">
+    <div class="card">
+      <div class="metric">2 yrs</div>
+      <p><strong>Continuous iteration</strong><br><span class="muted">Refined and pressure-tested across two years.</span></p>
+    </div>
+    <div class="card">
+      <div class="metric">12</div>
+      <p><strong>Live cohorts</strong><br><span class="muted">Repeated delivery, not a one-off experiment.</span></p>
+    </div>
+    <div class="card">
+      <div class="metric">3000+</div>
+      <p><strong>Paid learners</strong><br><span class="muted">More than half from leading Silicon Valley companies.</span></p>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:16px; align-items:start;">
+    <div class="portrait-grid">
+      <div class="portrait-card">
+        <img src="course-yz.png" alt="Yuzheng Sun">
+        <div class="portrait-copy">
+          <div class="pill">YZ Sun</div>
+          <p class="muted" style="margin:0;">Cornell PhD, former Amazon economist, Meta data scientist, and Tencent IEG director-level operator.</p>
+        </div>
+      </div>
+      <div class="portrait-card">
+        <img src="course-yan.png" alt="Yan Wang">
+        <div class="portrait-copy">
+          <div class="pill">Yan Wang</div>
+          <p class="muted" style="margin:0;">Columbia PhD, nearly 20 years in AI R&amp;D across Adobe, Microsoft, and Samsara.</p>
+        </div>
+      </div>
+    </div>
+    <div class="accent">
+      <div class="pill">Audience Fit</div>
+      <p class="muted">Designed for engineers, product leaders, designers, strategists, managers, and high-performing non-technical operators.</p>
+      <p class="muted">Not a concept lecture. A program for people expected to produce real organizational value.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    Make this credibility, not autobiography.
+    Two years of iteration.
+    Twelve live cohorts.
+    More than three thousand paid learners.
+    Then quickly anchor the instructor fit:
+    operator plus researcher plus teacher.
+  </aside>
+</section>
+
+<section>
+  <div class="eyebrow">Learner Signal</div>
+  <h2>What strong learners say they got</h2>
+  <div class="grid-2" style="margin-top:18px; align-items:start;">
+    <div>
+      <div class="card">
+        <div class="pill">Common Pattern</div>
+        <ul class="muted">
+          <li>not just new tricks</li>
+          <li>a better mental model</li>
+          <li>a stronger self-learning loop</li>
+          <li>a builder mindset</li>
+        </ul>
+      </div>
+      <div class="accent" style="margin-top:16px;">
+        <div class="pill">Representative Feedback</div>
+        <p class="muted">
+          The most consistent signal is not “I learned a few techniques.”
+          It is “I now think differently about how to build with AI.”
+        </p>
+      </div>
+    </div>
+    <div class="image-frame" style="height:430px;">
+      <img src="course-cohort.jpeg" alt="Live corporate training cohort">
+    </div>
+  </div>
+  <aside class="notes">
+    The learner signal is consistent:
+    not just tips, but a better mental model and a stronger builder mindset.
+    Use the cohort image to convey that this has been taught in real rooms, not only online.
+  </aside>
+</section>
+
+<section class="dark hero">
+  <div style="text-align:center; padding-top: 44px;">
+    <div class="eyebrow">Closing</div>
+    <h2 style="font-size:1.48em; max-width: 920px; margin: 0 auto 0.52em;">
+      Chat helps with tasks.<br>
+      <span class="orange">Agents change the operating model.</span>
+    </h2>
+    <p style="max-width: 760px; margin: 0 auto 0.9em; color:#cbd5e1;">
+      That is why agents can capture compounding value and chat alone cannot.
+    </p>
+    <p class="small" style="color:#94a3b8; margin:0 0 10px;">
+      If you want the full upgrade path from AI user to AI builder, that is what our program is designed to do.
+    </p>
+    <p class="small" style="color:#94a3b8; margin:0;">
+      Demo repo and deploy created for this talk.
+    </p>
+  </div>
+  <aside class="notes">
+    Close with the same distinction from the opening.
+    Chat helps with tasks.
+    Agents change the operating model.
+    If they want the full upgrade path from AI user to AI builder, that is the bridge to the program.
+  </aside>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    center: true,
+    history: true,
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    minScale: 0.2,
+    maxScale: 2.0,
+    plugins: [RevealNotes]
+  });
+</script>
+</body>
+</html>

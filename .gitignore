@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# Local editor / OS noise
+.idea/
+.vscode/
+
+# Python virtualenvs
+.venv/
+venv/
+
+# Node installs if added later
+node_modules/
