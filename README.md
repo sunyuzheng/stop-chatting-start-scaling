@@ -11,6 +11,7 @@ English Reveal.js deck and demo repo for the Amazon talk on **April 22, 2026**.
 - `sources/presentation-building-notes.md` — synthesis used to build the deck
 - `docs/LAUNCH_READINESS.md` — release and QA notes
 - `docs/LEARNINGS.md` — final messaging and structure learnings
+- `docs/PRESENTATION_PLAYBOOK.md` — reusable playbook for future AI agent talks
 
 ## Run Locally
 
