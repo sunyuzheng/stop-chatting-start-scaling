@@ -26,6 +26,14 @@ git clone https://github.com/sunyuzheng/stop-chatting-start-scaling.git
 cd stop-chatting-start-scaling/oversized-shipping-demo
 ```
 
+If you already cloned the repo earlier:
+
+```bash
+cd stop-chatting-start-scaling
+git pull
+cd oversized-shipping-demo
+```
+
 Run the starter:
 
 ```bash
@@ -45,6 +53,66 @@ python3 -m http.server 9002
 ```
 
 Open `http://127.0.0.1:9002`.
+
+## Follow Along During The Talk
+
+Use this path if you are following along from your own laptop.
+
+1. Clone the repo:
+
+```bash
+git clone https://github.com/sunyuzheng/stop-chatting-start-scaling.git
+cd stop-chatting-start-scaling/oversized-shipping-demo/starter
+```
+
+If you already have the repo:
+
+```bash
+cd stop-chatting-start-scaling
+git pull
+cd oversized-shipping-demo/starter
+```
+
+2. Run the baseline check:
+
+```bash
+npm test
+```
+
+3. Open the starter app:
+
+```bash
+python3 -m http.server 9001
+```
+
+Open `http://127.0.0.1:9001`.
+
+4. Read the task:
+
+```text
+docs/change-request.md
+```
+
+5. Before using Cursor, spend a few minutes thinking about how you would do it with ChatGPT:
+
+- What files would you need to paste into chat?
+- How would you know whether every customer-facing surface was updated?
+- Where would you put the shared policy source?
+- What checks would you ask ChatGPT to write?
+- What would still be manual after ChatGPT gives you an answer?
+
+6. Then compare that with Cursor / agent mode:
+
+```text
+Implement the policy change across the repo.
+Update the oversized shipping promise to 3-5 business days.
+Preserve the Prime exception for the top 20 metro areas.
+Remove scattered hardcoded copy.
+Create one shared policy source.
+Update tests, run them, and fix failures.
+```
+
+The point is not that ChatGPT is bad. The point is to feel the difference between advice and execution inside the repo.
 
 ## Scenario
 

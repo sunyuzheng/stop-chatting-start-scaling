@@ -22,6 +22,13 @@ git clone https://github.com/sunyuzheng/stop-chatting-start-scaling.git
 cd stop-chatting-start-scaling
 ```
 
+If the repo is already on the computer:
+
+```bash
+cd stop-chatting-start-scaling
+git pull
+```
+
 ## 2. Run The Deck
 
 The deck is a static Reveal.js page. The simplest local run path is:
@@ -88,6 +95,55 @@ http://127.0.0.1:9002
 Use `oversized-shipping-demo/DEMO_SCRIPT.md` for the short talk track.
 
 Use `oversized-shipping-demo/WALKTHROUGH.md` for the detailed operator flow.
+
+## 4A. Audience Follow-Along Flow
+
+Give participants this repo:
+
+```text
+https://github.com/sunyuzheng/stop-chatting-start-scaling
+```
+
+Ask them to run:
+
+```bash
+git clone https://github.com/sunyuzheng/stop-chatting-start-scaling.git
+cd stop-chatting-start-scaling/oversized-shipping-demo/starter
+npm test
+python3 -m http.server 9001
+```
+
+If they already cloned the repo before the session:
+
+```bash
+cd stop-chatting-start-scaling
+git pull
+cd oversized-shipping-demo/starter
+npm test
+python3 -m http.server 9001
+```
+
+Open:
+
+```text
+http://127.0.0.1:9001
+```
+
+Ask them to read:
+
+```text
+docs/change-request.md
+```
+
+Then give them a few minutes to explore the ChatGPT version mentally or directly:
+
+- Which files would you paste into ChatGPT?
+- How would you ask it to find all duplicated policy copy?
+- How would you verify checkout, order confirmation, help center, and docs all changed?
+- How would you ask it to create one shared policy source?
+- Which parts would still require you to copy, edit, run, and debug manually?
+
+Then run the same request in Cursor / agent mode and compare the workflow.
 
 The key files to open on stage:
 
