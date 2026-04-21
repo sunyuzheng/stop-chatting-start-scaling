@@ -527,9 +527,12 @@
     </div>
   </div>
   <aside class="notes">
-    Start with the topic and enough background to answer why I am the person giving this talk.
-    Keep the Amazon link factual and light: I was an Economist in Perfect Order Experience from 2017 to 2019 and went through Machine Learning University.
-    Then move quickly to the real claim: this is about changing how work is organized.
+    Open with the promise of the talk: this is not a tour of new AI features.
+    The claim is that the main upgrade is operational.
+    Briefly place myself: Cornell economics PhD, Amazon Economist in Perfect Order Experience from 2017 to 2019, went through Machine Learning University, later worked at Meta, Tencent, Statsig, and now teach AI Builders.
+    Do not linger on credentials.
+    Use that background only to explain why I care about systems, measurement, and repeated work.
+    Transition: the question today is not whether AI can answer. The question is whether AI can change how work gets done.
   </aside>
 </section>
 
@@ -558,12 +561,12 @@
     </div>
   </div>
   <aside class="notes">
-    Keep this as context, not a sales pitch.
-    The reason to mention the course is that I have seen many capable people try to learn AI.
-    The repeated blocker is not technical difficulty.
-    It is practice, habit, and mindset.
-    Use the gym analogy: the change happens when people get reps in the right workflow.
-    Then transition into the Amazon background and the operating-model framing.
+    Make it explicit that this is not a course pitch.
+    I am mentioning AI Builders because teaching thousands of capable people gives me repeated data on where people get stuck.
+    The pattern is usually not lack of model access, not syntax, not a missing tool.
+    The blocker is that people keep using AI as a smarter chat box instead of building a working loop around it.
+    Use the gym analogy: reading about fitness is not the same as getting reps.
+    Today is about the habit change that gets the reps into daily work.
   </aside>
 </section>
 
@@ -585,10 +588,12 @@
     </div>
   </div>
   <aside class="notes">
-    I want the audience to remember three things.
-    First, chat and agents are different work methods.
-    Second, compounding is the real reason agents matter.
-    Third, the destination is not more usage. It is a different professional identity.
+    Set the map for the audience.
+    There are only three claims.
+    First: chat and agents are not the same workflow.
+    Second: the reason agents matter is compounding, not one-off speed.
+    Third: the endpoint is not becoming a heavier AI user; it is becoming someone who can build with AI.
+    Say that everything else in the talk is just evidence for these three claims.
   </aside>
 </section>
 
@@ -629,12 +634,12 @@
     </div>
   </div>
   <aside class="notes">
-    Use this slide to widen the ambition without sounding inflated.
-    The point is not to defend a number.
-    The point is that the real spread is much larger than most people think.
-    Same model, different work method.
-    Chat keeps the human in the middle of the loop.
-    Agent mode closes more of the loop itself, works with better context, and leaves assets behind.
+    Use this to raise ambition without arguing about exact numbers.
+    Some people get modest productivity gains because they use the model as an assistant.
+    Others get order-of-magnitude leverage because they redesign the workflow around context, execution, and reusable assets.
+    Same underlying models, very different operating method.
+    Point to the contrast: chat keeps the human as middleware; agents can work inside a real environment and leave structure behind.
+    Transition: this is not the first time a new technology required workflow redesign.
   </aside>
 </section>
 
@@ -674,11 +679,13 @@
     </p>
   </div>
   <aside class="notes">
-    This is the slide that makes the abstraction legible.
-    Most organizations react to AI the same way factories first reacted to the electric motor:
-    new tool, old workflow.
-    That gives local efficiency.
-    Real transformation starts when the line itself is redesigned.
+    Tell the electric motor analogy simply.
+    Early factories did not immediately become modern factories just because they had electricity.
+    At first they put the new motor into the old line.
+    The big gain came when the work itself was redesigned around the new capability.
+    AI is similar.
+    If we only put AI into the old chat-based workflow, we get local speedups.
+    The larger gain comes from redesigning the line: context, delegation, verification, and memory.
   </aside>
 </section>
 
@@ -691,10 +698,12 @@
     </h2>
   </div>
   <aside class="notes">
-    Pause here.
-    This is the hinge sentence for the rest of the talk.
-    Chat gives advice.
-    Agents operate inside an environment with files, tools, and checks.
+    Pause on this slide.
+    This is the hinge of the talk.
+    Chat is primarily an advice interface: you ask, it answers, you move the answer into the world.
+    Cursor and agent workflows operate inside the environment: files, terminal, tests, browser, docs.
+    That environment is what changes the work method.
+    Transition: now break down the ceiling of the chat window into three concrete limits.
   </aside>
 </section>
 
@@ -731,11 +740,11 @@
     </div>
   </div>
   <aside class="notes">
-    This is the full argument.
-    First, the feedback loop changes: chat is open loop, agents can operate in a closed loop.
-    Second, context changes: the bottleneck is often context supply, not model intelligence.
-    Third, assets change: chat is consumptive, agent workflows are investment-like.
-    That is why the chat window is a ceiling.
+    Walk through the three limits.
+    Feedback loop: in chat, the model gives output and I have to run it, notice failure, and bring the error back. In agent mode, the system can run, inspect, retry, and repair.
+    Context supply: in chat, I have to manually describe the world. In agent mode, it can read the repo, docs, files, and tests.
+    Asset accumulation: chat answers often disappear after the task. Agent work can leave tests, docs, modules, and standards.
+    This is why the demo is not about a clever prompt. It is about moving from advice to a working loop.
   </aside>
 </section>
 
@@ -766,10 +775,12 @@
     <p class="small" style="margin:0;"><strong>Demo repo:</strong> <code>go.ai-builders.com/amazon</code></p>
   </div>
   <aside class="notes">
-    Introduce the demo as a policy change across a tiny but real system.
-    The point is not code sophistication.
-    The point is that the task requires context, execution, consistency, and a second round of change.
-    That is why it is a good agent demo.
+    Introduce the demo as intentionally small but realistic.
+    The task is a shipping policy change across multiple customer-facing surfaces.
+    Emphasize that this is not about sophisticated code.
+    The important properties are: multiple files, business copy plus implementation, tests, and a second request.
+    Point out the repo link for people following along.
+    Transition: before running Cursor, show why this is actually a system problem.
   </aside>
 </section>
 
@@ -811,12 +822,14 @@
     </p>
   </div>
   <aside class="notes">
-    Show the starter repo here.
-    Make the problem concrete: the same policy exists in multiple surfaces.
-    The challenge is not typing 3-5 business days. The challenge is preventing drift while preserving the exception.
-    Then contrast the two approaches.
-    Chat can advise and draft, but the human still coordinates the repo.
-    The agent can inspect, change, run tests, and leave one policy source behind.
+    Show the starter repo in the editor if possible.
+    Make the hidden problem concrete: one business rule is duplicated across checkout, order confirmation, help center, and policy docs.
+    The hard part is not replacing text with 3-5 business days.
+    The hard part is keeping copy, logic, and tests aligned while preserving the Prime metro exception.
+    Contrast the workflows.
+    Chat can tell us likely places to edit.
+    The human still has to coordinate files, run checks, and avoid drift.
+    An agent can inspect the repo, change it, verify it, and leave a better structure.
   </aside>
 </section>
 
@@ -848,10 +861,12 @@
     <p style="margin:0;"><strong>Explore for a few minutes.</strong> Then we will run the same request in Cursor and compare advice vs. execution inside the repo.</p>
   </div>
   <aside class="notes">
-    Pause here and let people follow along.
-    The goal is for them to feel the coordination burden of the chat workflow before seeing the agent workflow.
-    Give them a few minutes to inspect the repo and think about what they would ask ChatGPT.
-    Then transition to Cursor with the live prompt.
+    This is the audience participation moment.
+    Ask people to open the short link first, then clone from the GitHub command if they want to follow locally.
+    Explain npm test clearly: it is optional. It is only a baseline check that confirms the starter repo still contains the old duplicated 2-day policy. If they do not have Node/npm, they can skip it and still follow by reading the request and files.
+    Give them a few minutes to think like ChatGPT.
+    Ask: which files would you paste in? How would you know you found every instance? Where would a shared policy source live? How would you verify the result?
+    The goal is for them to feel the coordination burden before seeing Cursor.
   </aside>
 </section>
 
@@ -879,10 +894,13 @@
     </div>
   </div>
   <aside class="notes">
-    Read the request in business language.
-    Then make the contrast explicit:
-    chat can suggest, but the agent can inspect the repo, implement, test, and repair.
-    This is the slide to set up the live action in Cursor.
+    Read the prompt slowly.
+    This is intentionally written in business language, not implementation language.
+    The important instruction is not only "change the promise."
+    It also says: preserve the exception, remove scattered copy, create one shared source, update tests, run them, and fix failures.
+    Then switch to Cursor.
+    Narrate what Cursor is doing: reading files, forming a plan, editing, running checks.
+    If the agent makes mistakes, that is fine. Use it as evidence that the loop matters: inspect, run, repair.
   </aside>
 </section>
 
@@ -907,12 +925,12 @@
     </div>
   </div>
   <aside class="notes">
-    After the first run, do not talk about speed.
-    Talk about assets.
-    One policy source.
-    Shared customer copy.
-    Tests.
-    These are the things that make the next request cheaper than the first one.
+    After the first run, do not make the point "AI was fast."
+    Make the point "the system is different now."
+    Show the shared policy module, shared copy or updated surfaces, and the test.
+    These are assets.
+    The first run should leave something behind that makes the second run cheaper.
+    If all we did was patch strings, we did not really improve the operating model.
   </aside>
 </section>
 
@@ -937,11 +955,12 @@
     </div>
   </div>
   <aside class="notes">
-    This is the real proof slide.
-    The first request is not enough.
-    The second request reveals whether we created structure or just patched files.
-    If the second change is cheap, then the system improved.
-    That is the definition of compounding in this talk.
+    This is the proof of compounding.
+    The first request can always be faked by patching enough files.
+    The second request reveals whether the system improved.
+    If we centralized the rule and added tests, expanding top 20 to top 40 or adding Alaska/Hawaii is a smaller, safer change.
+    If we only edited strings, the second request is expensive again.
+    Land the line: chat resets; agents can compound.
   </aside>
 </section>
 
@@ -976,9 +995,14 @@
     </div>
   </div>
   <aside class="notes">
-    Use this as the aspiration framework, not as the main content.
-    The talk so far explained the first four steps in practical terms.
-    The fifth step is what becomes possible after context, delegation, and memory are in place.
+    Shift from demo back to the broader path.
+    This is the identity change behind the talk.
+    Calibration is knowing what AI is good for.
+    Usable output means AI work can actually enter the workflow.
+    Delegation means whole tasks move into loops.
+    Memory means lessons and standards survive the session.
+    Thinking partner is what becomes possible after the first four are in place.
+    This is not about using more AI; it is about becoming a builder with AI.
   </aside>
 </section>
 
@@ -1008,11 +1032,12 @@
     </div>
   </div>
   <aside class="notes">
-    Keep this to one slide.
-    The point is simple:
-    this is the full course for people who want to build the capability, not just hear the idea.
-    Give the history, give the offer, and move on.
-    Mention coupon code amazon, applicable to the bundle.
+    Keep this short and practical.
+    This is the full path for people who want structured reps after the talk.
+    Mention the history only as evidence that the course has been iterated and tested.
+    Then state the offer clearly: go to ai-builders.com, coupon code amazon, $100 off the AI Builders bundle.
+    Do not oversell.
+    Position it as optional support for people who want to build the habit and operating model.
   </aside>
 </section>
 
@@ -1040,8 +1065,12 @@
     </div>
   </div>
   <aside class="notes">
-    Use this as evidence, not hype.
-    The consistent pattern is builder mindset, deeper practice, and a lasting shift in how people approach work.
+    Use this as evidence of behavior change, not generic praise.
+    Point out the pattern across the three quotes.
+    One person built a real tool.
+    One person was already a daily AI user but still learned a deeper method.
+    One person describes a mindset shift into using AI for real problems.
+    The signal is not that people liked the course. The signal is that their default way of working changed.
   </aside>
 </section>
 
@@ -1079,10 +1108,11 @@
     <p class="small" style="margin:0;"><strong>Same path, now taught as a five-stage progression.</strong></p>
   </div>
   <aside class="notes">
-    This is the course path.
-    It is not a list of tools.
-    It teaches the same staged upgrade:
-    calibration, usable output, delegation, memory, then thinking partner.
+    Connect the curriculum back to the talk.
+    This is the same progression as the demo, just taught deliberately.
+    It is not a tool catalog.
+    The path is: build judgment, produce usable output, delegate tasks, create memory, then use AI as a thinking partner.
+    If time is short, do not read every card. Emphasize that the course is organized around capability stages.
   </aside>
 </section>
 
@@ -1135,12 +1165,14 @@
     <p class="small" style="margin:0;"><strong>These are methods, not prompts.</strong> Free project support and examples: <code>superlinear.academy/c/share-your-projects-en/</code></p>
   </div>
   <aside class="notes">
-    Re-map the methods to the five-stage path.
-    Calibration comes from mental models and judgment.
-    Usable output comes from documentation and context.
-    Delegation comes from deciding what AI should own, then giving it loops.
-    Memory comes from personal infrastructure.
-    Thinking partner comes from building enough real projects that AI starts extending your capability.
+    This slide translates stages into methods.
+    Calibration: mental models and capability probing.
+    Usable output: documentation, context, and outcome-oriented specs.
+    Delegation: task spectrum mapping and agentic loops.
+    Memory: personal context architecture, templates, and standards.
+    Thinking partner: cross-domain leverage and real projects.
+    The point is that these are methods, not prompts.
+    Mention the free community link only if there is time.
   </aside>
 </section>
 
@@ -1159,10 +1191,13 @@
     <p class="small" style="color:#94a3b8; margin:0;">Free community support and project sharing: <code>superlinear.academy/c/share-your-projects-en/</code></p>
   </div>
   <aside class="notes">
-    Close with the same distinction from the opening.
-    Chat helps with tasks.
-    Agents change the operating model.
-    If they want the full upgrade path, point them to the course and the Amazon offer.
+    Close by returning to the first sentence.
+    Chat is useful. Do not dismiss it.
+    But chat mainly helps with tasks.
+    Agents change the operating model because they can work with context, execute, verify, and leave assets behind.
+    Point people to the repo short link for the deck and demo.
+    Mention course details only once: ai-builders.com, coupon amazon, $100 off the AI Builders bundle.
+    End with the practical challenge: take one recurring workflow and move it from chat advice into an agentic loop.
   </aside>
 </section>
 
