@@ -4,6 +4,8 @@ This repo is a live demo for the talk:
 
 **Stop Chatting, Start Scaling: How AI Agents Transform Work**
 
+Parent GitHub repo: <https://github.com/sunyuzheng/stop-chatting-start-scaling>
+
 It is designed to show the difference between:
 
 - `chat` as an advice layer
@@ -14,6 +16,35 @@ It is designed to show the difference between:
 
 - `starter/` — the live demo starting point
 - `solved/` — the answer key and the deployable version
+- `DEMO_SCRIPT.md` — concise stage script
+- `WALKTHROUGH.md` — detailed operator guide
+
+## Fresh Computer Quick Start
+
+```bash
+git clone https://github.com/sunyuzheng/stop-chatting-start-scaling.git
+cd stop-chatting-start-scaling/oversized-shipping-demo
+```
+
+Run the starter:
+
+```bash
+cd starter
+npm test
+python3 -m http.server 9001
+```
+
+Open `http://127.0.0.1:9001`.
+
+Run the solved version in a second terminal:
+
+```bash
+cd solved
+npm test
+python3 -m http.server 9002
+```
+
+Open `http://127.0.0.1:9002`.
 
 ## Scenario
 
@@ -100,6 +131,20 @@ python3 -m http.server 9001
 cd solved
 npm test
 python3 -m http.server 9002
+```
+
+## Deploy
+
+Both folders are static sites with `vercel.json`.
+
+```bash
+cd starter
+vercel --yes --prod
+```
+
+```bash
+cd solved
+vercel --yes --prod
 ```
 
 ## What To Say

@@ -216,6 +216,67 @@
       background: #fff;
     }
 
+    .hero-intro {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 28px;
+      align-items: end;
+      height: 100%;
+      text-align: left;
+    }
+
+    .hero-intro h1 {
+      font-size: 1.68em;
+      margin-bottom: 0.34em;
+    }
+
+    .speaker-panel {
+      display: grid;
+      gap: 12px;
+      align-content: end;
+    }
+
+    .speaker-line {
+      border-left: 4px solid var(--orange);
+      padding-left: 16px;
+    }
+
+    .speaker-line p {
+      margin: 0;
+      color: #cbd5e1;
+      font-size: 0.46em;
+      line-height: 1.42;
+    }
+
+    .experience-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .experience-chip {
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #e2e8f0;
+      min-height: 78px;
+    }
+
+    .experience-chip strong {
+      display: block;
+      font-size: 0.42em;
+      line-height: 1.2;
+      margin-bottom: 5px;
+    }
+
+    .experience-chip span {
+      display: block;
+      color: #94a3b8;
+      font-size: 0.34em;
+      line-height: 1.34;
+    }
+
     .portrait-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -241,6 +302,128 @@
 
     .portrait-copy {
       padding: 14px 16px 16px;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .approach-card {
+      border-radius: 18px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.88);
+      min-height: 170px;
+    }
+
+    .approach-card strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .starter-clarity h2 {
+      font-size: 1.04em;
+      max-width: 1040px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .starter-clarity .card,
+    .starter-clarity .accent,
+    .starter-clarity .soft,
+    .starter-clarity .approach-card {
+      padding: 13px 16px;
+    }
+
+    .starter-clarity h3 {
+      font-size: 0.58em;
+      margin-bottom: 0.22em;
+    }
+
+    .starter-clarity p {
+      font-size: 0.42em;
+      line-height: 1.36;
+    }
+
+    .starter-clarity .step,
+    .starter-clarity .pill {
+      margin-bottom: 0.42em;
+    }
+
+    .starter-clarity .grid-3,
+    .starter-clarity .approach-grid {
+      gap: 12px;
+    }
+
+    .starter-clarity .approach-card {
+      min-height: 0;
+    }
+
+    .starter-clarity .approach-card p {
+      margin: 0;
+    }
+
+    .course-context h2 {
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .course-context .lead {
+      max-width: 880px;
+      margin: 0 auto 16px;
+      color: var(--muted);
+      font-size: 0.50em;
+      line-height: 1.46;
+      text-align: center;
+    }
+
+    .course-context .context-band {
+      display: grid;
+      grid-template-columns: 0.84fr 1.16fr;
+      gap: 16px;
+      align-items: stretch;
+      margin-top: 18px;
+      text-align: left;
+    }
+
+    .course-context .course-shot {
+      height: 316px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+    }
+
+    .course-context .course-shot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top left;
+      display: block;
+    }
+
+    .course-context .big-number {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.20em;
+      line-height: 0.92;
+      color: var(--orange);
+      margin-bottom: 10px;
+    }
+
+    .course-context .card,
+    .course-context .accent,
+    .course-context .soft {
+      padding: 18px 20px;
+    }
+
+    .course-context p {
+      font-size: 0.46em;
+      line-height: 1.42;
     }
 
     .quote {
@@ -300,24 +483,77 @@
 <div class="slides">
 
 <section class="dark hero">
-  <div style="text-align:center; padding-top: 44px;">
-    <div class="eyebrow">Amazon · April 22, 2026</div>
-    <h1 style="max-width: 980px; margin: 0 auto 0.42em;">
-      Stop Chatting, Start Scaling:<br>
-      <span class="orange">How AI Agents Transform Work</span>
-    </h1>
-    <p style="max-width: 760px; margin: 0 auto 1.12em; color:#cbd5e1; font-size:0.56em;">
-      The real shift is not better answers in a chat window.
-      It is a different way of organizing work.
-    </p>
-    <div style="width:76px; height:3px; background:var(--orange); border-radius:999px; margin: 0 auto 18px;"></div>
-    <p class="small" style="color:#94a3b8; margin:0;">Yuzheng Sun</p>
+  <div class="hero-intro">
+    <div>
+      <div class="eyebrow">Amazon · April 22, 2026</div>
+      <h1>
+        Stop Chatting, Start Scaling:<br>
+        <span class="orange">How AI Agents Transform Work</span>
+      </h1>
+      <p style="max-width: 760px; color:#cbd5e1; font-size:0.56em;">
+        The real shift is not better answers in a chat window.
+        It is a different way of organizing work.
+      </p>
+    </div>
+    <div class="speaker-panel">
+      <div class="speaker-line">
+        <p><strong>Yuzheng Sun</strong> · Cornell PhD economist, founder of Superlinear Academy and AI Builders.</p>
+        <p>Amazon Economist in Perfect Order Experience from 2017 to 2019; later Meta, Tencent, and Statsig.</p>
+      </div>
+      <div class="experience-strip">
+        <div class="experience-chip">
+          <strong>Amazon, 2017-2019</strong>
+          <span>Perfect Order Experience; ML University</span>
+        </div>
+        <div class="experience-chip">
+          <strong>AI Builders</strong>
+          <span>3,000+ learners across real AI projects</span>
+        </div>
+        <div class="experience-chip">
+          <strong>Today</strong>
+          <span>mindset, habits, and operating loops</span>
+        </div>
+      </div>
+    </div>
   </div>
   <aside class="notes">
-    Open with the core claim immediately.
-    This talk is not about model cleverness.
-    It is about a change in work design.
-    Set up the phrase I will keep repeating: chat helps with tasks, agents change the operating model.
+    Start with the topic and enough background to answer why I am the person giving this talk.
+    Keep the Amazon link factual and light: I was an Economist in Perfect Order Experience from 2017 to 2019 and went through Machine Learning University.
+    Then move quickly to the real claim: this is about changing how work is organized.
+  </aside>
+</section>
+
+<section class="course-context">
+  <div class="eyebrow">Relevant Context</div>
+  <h2>Why this talk starts with habits, not tools</h2>
+  <p class="lead">
+    Outside this Amazon talk, I teach AI Builders. That is relevant because it gives me repeated exposure to where capable people get stuck in real projects.
+  </p>
+  <div class="context-band">
+    <div class="course-shot">
+      <img src="./course-page.png" alt="AI Builders course page on Maven.">
+    </div>
+    <div class="stack">
+      <div class="card">
+        <div class="pill">Observed Across 3,000+ Learners</div>
+        <p class="muted" style="margin:0;">The blocker is usually not model access, syntax, or the newest technical feature.</p>
+      </div>
+      <div class="accent">
+        <div class="pill">The Actual Blocker</div>
+        <p class="muted" style="margin:0;">The hard part is getting into the gym: changing the default habit from asking AI for answers to building a working loop around AI.</p>
+      </div>
+      <div class="soft">
+        <p style="margin:0;"><strong>My intention today:</strong> no fancy technology tour. Just a simple mindset and habit change that can profoundly change how you work with AI.</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    Keep this as context, not a sales pitch.
+    The reason to mention the course is that I have seen many capable people try to learn AI.
+    The repeated blocker is not technical difficulty.
+    It is practice, habit, and mindset.
+    Use the gym analogy: the change happens when people get reps in the right workflow.
+    Then transition into the Amazon background and the operating-model framing.
   </aside>
 </section>
 
@@ -516,6 +752,9 @@
       </ul>
     </div>
   </div>
+  <div class="soft" style="margin-top:16px;">
+    <p class="small" style="margin:0;"><strong>Demo repo:</strong> <code>github.com/sunyuzheng/stop-chatting-start-scaling</code></p>
+  </div>
   <aside class="notes">
     Introduce the demo as a policy change across a tiny but real system.
     The point is not code sophistication.
@@ -524,41 +763,50 @@
   </aside>
 </section>
 
-<section>
+<section class="starter-clarity">
   <div class="eyebrow">Starter Repo</div>
-  <h2>Before the agent runs</h2>
-  <div class="grid-4" style="margin-top:18px;">
+  <h2>The hidden problem: one policy is scattered across the product</h2>
+  <div class="grid-3" style="margin-top:18px;">
     <div class="card">
-      <div class="step">Surface 1</div>
-      <h3>Checkout</h3>
-      <p class="muted">Customer-facing shipping promise.</p>
+      <div class="step">Problem</div>
+      <h3>Duplicated business rule</h3>
+      <p class="muted">The same oversized-shipping promise is hardcoded in checkout, order confirmation, and help center.</p>
+      <p class="muted" style="margin:0;"><strong>Same rule. Three places to forget.</strong></p>
     </div>
     <div class="card">
-      <div class="step">Surface 2</div>
-      <h3>Order confirmation</h3>
-      <p class="muted">Another place the same promise appears.</p>
-    </div>
-    <div class="card">
-      <div class="step">Surface 3</div>
-      <h3>Help center</h3>
-      <p class="muted">Support copy with the same policy embedded.</p>
+      <div class="step">Challenge</div>
+      <h3>Change without drift</h3>
+      <p class="muted">Move to <code>3-5 business days</code> while preserving the Prime metro exception.</p>
+      <p class="muted" style="margin:0;"><strong>Copy, logic, and tests must agree.</strong></p>
     </div>
     <div class="accent">
-      <div class="step">Problem</div>
-      <h3>Hardcoded drift</h3>
-      <p class="muted">The policy is duplicated. Change is expensive and error-prone.</p>
+      <div class="step">Goal</div>
+      <h3>Make the next change cheaper</h3>
+      <p class="muted">Create one shared policy source so future exceptions are smaller changes, not another file hunt.</p>
     </div>
   </div>
-  <div class="card" style="margin-top:16px;">
+  <div class="approach-grid">
+    <div class="approach-card">
+      <div class="pill">Chat Approach</div>
+      <p class="muted"><strong>Advice, then manual coordination.</strong>Suggest likely edits. You still copy changes, run tests, and catch missed surfaces.</p>
+    </div>
+    <div class="approach-card" style="background:linear-gradient(180deg, #fffaf3, #fff7ed); border-color:rgba(255,153,0,0.34);">
+      <div class="pill">Agent Approach</div>
+      <p class="muted"><strong>Inspect, change, verify, and leave structure.</strong>Read the repo, centralize the policy, update surfaces, run tests, and repair failures.</p>
+    </div>
+  </div>
+  <div class="soft" style="margin-top:12px;">
     <p style="margin:0;">
-      This is where chat stalls: it can suggest where to edit, but it does not leave behind a better system.
+      <strong>The difference:</strong> chat helps patch instances; an agent can improve the system that produces those instances.
     </p>
   </div>
   <aside class="notes">
     Show the starter repo here.
-    The audience should see one business rule duplicated across checkout, email, help center, and docs.
-    Stress that this is exactly the kind of change work that keeps happening in real teams.
-    The problem is not changing text. The problem is changing the system safely.
+    Make the problem concrete: the same policy exists in multiple surfaces.
+    The challenge is not typing 3-5 business days. The challenge is preventing drift while preserving the exception.
+    Then contrast the two approaches.
+    Chat can advise and draft, but the human still coordinates the repo.
+    The agent can inspect, change, run tests, and leave one policy source behind.
   </aside>
 </section>
 
@@ -698,7 +946,7 @@
       <ul class="muted">
         <li>2+ years of continuous iteration</li>
         <li>12 live cohorts delivered</li>
-        <li>2,000+ learners validated</li>
+        <li>3,000+ learners validated</li>
         <li>4.9/5 rating on Maven</li>
       </ul>
     </div>
@@ -859,6 +1107,7 @@
     <p style="max-width: 760px; margin: 0 auto 0.9em; color:#cbd5e1;">
       That is why agents can capture compounding value and chat alone cannot.
     </p>
+    <p class="small" style="color:#94a3b8; margin:0 0 10px;">Deck and demo repo: <code>github.com/sunyuzheng/stop-chatting-start-scaling</code></p>
     <p class="small" style="color:#94a3b8; margin:0 0 10px;">Course details: <code>ai-builders.com</code>. Amazon attendees: self-paced AI Builders, $100 off.</p>
     <p class="small" style="color:#94a3b8; margin:0;">Free community support and project sharing: <code>superlinear.academy/c/share-your-projects-en/</code></p>
   </div>
