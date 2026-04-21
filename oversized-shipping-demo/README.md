@@ -4,6 +4,8 @@ This repo is a live demo for the talk:
 
 **Stop Chatting, Start Scaling: How AI Agents Transform Work**
 
+Short link for the talk: <https://go.ai-builders.com/amazon>
+
 Parent GitHub repo: <https://github.com/sunyuzheng/stop-chatting-start-scaling>
 
 It is designed to show the difference between:
@@ -78,6 +80,10 @@ cd oversized-shipping-demo/starter
 ```bash
 npm test
 ```
+
+This step is optional. It runs `tests/check-policy.mjs`, a tiny Node script that confirms the starter repo still has the old duplicated `2-day delivery` policy. It is there so everyone begins from the same baseline.
+
+If you do not have Node/npm installed, skip `npm test`. You can still follow along by reading `docs/change-request.md` and inspecting the HTML files.
 
 3. Open the starter app:
 

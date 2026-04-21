@@ -2,6 +2,8 @@
 
 English Reveal.js deck and demo repo for the Amazon talk on **April 22, 2026**.
 
+Short link for the talk: <https://go.ai-builders.com/amazon>
+
 GitHub repo: <https://github.com/sunyuzheng/stop-chatting-start-scaling>
 
 ## Files
@@ -40,6 +42,8 @@ python3 -m http.server 9001
 ```
 
 Open `http://127.0.0.1:9001`.
+
+`npm test` is an optional baseline check. It runs a tiny Node script that confirms the starter repo still contains the old duplicated `2-day delivery` policy before the agent changes it. If you do not have Node/npm installed, skip this step and continue by reading `docs/change-request.md`.
 
 Run the solved demo in a second terminal:
 

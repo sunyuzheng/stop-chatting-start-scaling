@@ -8,71 +8,82 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/white.css">
 
   <style>
     :root {
-      --ink: #0f172a;
-      --muted: #5b6b82;
-      --line: #d9e2ec;
-      --paper: #f8fafc;
+      --ink: #111111;
+      --muted: #5f6368;
+      --line: #e5e5e5;
+      --paper: #f7f7f5;
+      --panel: #ffffff;
+      --panel-2: #f1f1ef;
       --orange: #ff9900;
-      --orange-2: #c97800;
-      --blue: #e8f0ff;
+      --orange-2: #b45309;
     }
 
     html { height: 100%; overflow: hidden; }
     body {
-      background:
-        radial-gradient(circle at top left, rgba(255, 153, 0, 0.10), transparent 24%),
-        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.10), transparent 26%),
-        var(--paper);
+      background: var(--paper);
     }
 
     .reveal {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-family: 'Geist', Inter, system-ui, sans-serif;
       color: var(--ink);
+    }
+
+    .reveal .controls {
+      color: var(--orange);
+    }
+
+    .reveal .progress {
+      color: var(--orange);
     }
 
     .reveal h1,
     .reveal h2,
     .reveal h3,
     .reveal h4 {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Geist', Inter, system-ui, sans-serif;
       text-transform: none;
-      letter-spacing: -0.02em;
+      letter-spacing: 0;
       color: var(--ink);
-      margin-bottom: 0.28em;
+      margin-bottom: 0.34em;
     }
 
-    .reveal h1 { font-size: 1.82em; font-weight: 800; line-height: 1.04; }
-    .reveal h2 { font-size: 1.16em; font-weight: 700; line-height: 1.12; }
-    .reveal h3 { font-size: 0.72em; font-weight: 700; line-height: 1.2; }
+    .reveal h1 { font-size: 1.72em; font-weight: 800; line-height: 1.02; }
+    .reveal h2 { font-size: 1.12em; font-weight: 750; line-height: 1.10; }
+    .reveal h3 { font-size: 0.66em; font-weight: 700; line-height: 1.18; }
     .reveal p { font-size: 0.52em; line-height: 1.52; margin-bottom: 0.58em; }
     .reveal ul, .reveal ol { margin: 0 0 0 1.1em; font-size: 0.51em; line-height: 1.48; }
     .reveal li { margin: 0.30em 0; }
     .reveal li::marker { color: var(--orange); }
     .reveal strong { color: var(--ink); }
     .reveal code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
       color: var(--orange-2);
       background: rgba(255, 153, 0, 0.08);
       padding: 0.08em 0.26em;
-      border-radius: 0.28em;
+      border-radius: 4px;
     }
 
     .reveal .slides section {
       padding: 18px 48px 16px;
       box-sizing: border-box;
       overflow: hidden;
+      background: var(--paper);
+    }
+
+    .reveal .slides section.dark {
+      background: transparent;
     }
 
     .eyebrow {
       font-size: 0.39em;
-      letter-spacing: 0.18em;
+      letter-spacing: 0;
       text-transform: uppercase;
       color: var(--orange);
       font-weight: 800;
@@ -85,9 +96,8 @@
     .hero,
     .divider {
       background:
-        radial-gradient(circle at top left, rgba(255, 153, 0, 0.20), transparent 24%),
-        radial-gradient(circle at bottom right, rgba(96, 165, 250, 0.14), transparent 28%),
-        linear-gradient(135deg, #0f172a 0%, #111827 58%, #1e293b 100%);
+        linear-gradient(135deg, rgba(255, 153, 0, 0.10), transparent 34%),
+        linear-gradient(135deg, #0a0a0a 0%, #141414 62%, #1f1f1f 100%);
     }
 
     .grid-2,
@@ -106,59 +116,59 @@
     .accent,
     .dark-card,
     .soft {
-      border-radius: 18px;
+      border-radius: 8px;
       padding: 18px 20px;
       box-sizing: border-box;
       text-align: left;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.86);
+      background: var(--panel);
       border: 1px solid var(--line);
-      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+      box-shadow: 0 4px 16px rgba(17, 17, 17, 0.04);
     }
 
     .accent {
-      background: linear-gradient(180deg, #fffaf3, #fff7ed);
-      border: 2px solid rgba(255, 153, 0, 0.34);
-      box-shadow: 0 12px 28px rgba(255, 153, 0, 0.10);
+      background: #fffaf0;
+      border: 1.5px solid rgba(255, 153, 0, 0.42);
+      box-shadow: 0 6px 18px rgba(255, 153, 0, 0.08);
     }
 
     .soft {
-      background: linear-gradient(180deg, #eff6ff, #f8fbff);
-      border: 1px solid #cfe2ff;
+      background: var(--panel-2);
+      border: 1px solid var(--line);
     }
 
     .dark-card {
-      background: rgba(15, 23, 42, 0.94);
-      border: 1px solid rgba(148, 163, 184, 0.16);
-      color: #dbe5f1;
+      background: #171717;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #e5e5e5;
     }
 
     .metric {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.72em;
+      font-family: 'Geist Mono', ui-monospace, monospace;
+      font-size: 1.44em;
       line-height: 1;
       color: var(--orange);
-      margin-bottom: 0.06em;
+      margin-bottom: 0.14em;
     }
 
     .pill {
       display: inline-block;
       padding: 0.28em 0.78em;
-      border-radius: 999px;
+      border-radius: 6px;
       font-size: 0.35em;
-      letter-spacing: 0.08em;
+      letter-spacing: 0;
       text-transform: uppercase;
       font-weight: 800;
-      background: var(--blue);
-      color: #1d4ed8;
+      background: #eeeeec;
+      color: #3f3f3f;
       margin-bottom: 0.9em;
     }
 
     .step {
       font-size: 0.43em;
-      letter-spacing: 0.12em;
+      letter-spacing: 0;
       text-transform: uppercase;
       color: var(--orange);
       font-weight: 800;
@@ -170,11 +180,11 @@
     .small { font-size: 0.40em; }
 
     .image-frame {
-      border-radius: 18px;
+      border-radius: 8px;
       overflow: hidden;
       border: 1px solid var(--line);
       background: #fff;
-      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+      box-shadow: 0 4px 16px rgba(17, 17, 17, 0.04);
     }
 
     .image-frame img {
@@ -255,7 +265,7 @@
     }
 
     .experience-chip {
-      border-radius: 14px;
+      border-radius: 8px;
       padding: 12px 14px;
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.12);
@@ -284,11 +294,11 @@
     }
 
     .portrait-card {
-      background: rgba(255, 255, 255, 0.86);
+      background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: 18px;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+      box-shadow: 0 4px 16px rgba(17, 17, 17, 0.04);
     }
 
     .portrait-card img {
@@ -312,10 +322,10 @@
     }
 
     .approach-card {
-      border-radius: 18px;
+      border-radius: 8px;
       padding: 16px 18px;
       border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.88);
+      background: var(--panel);
       min-height: 170px;
     }
 
@@ -392,11 +402,11 @@
 
     .course-context .course-shot {
       height: 316px;
-      border-radius: 18px;
+      border-radius: 8px;
       overflow: hidden;
       border: 1px solid var(--line);
       background: #fff;
-      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+      box-shadow: 0 4px 16px rgba(17, 17, 17, 0.04);
     }
 
     .course-context .course-shot img {
@@ -408,7 +418,7 @@
     }
 
     .course-context .big-number {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Geist Mono', ui-monospace, monospace;
       font-size: 2.20em;
       line-height: 0.92;
       color: var(--orange);
@@ -429,9 +439,9 @@
     .quote {
       border-left: 4px solid var(--orange);
       padding: 16px 18px;
-      background: rgba(255, 255, 255, 0.80);
-      border-radius: 0 16px 16px 0;
-      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+      background: var(--panel);
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 4px 16px rgba(17, 17, 17, 0.04);
     }
 
     .flow {
@@ -443,7 +453,7 @@
 
     .flow-box {
       flex: 1;
-      border-radius: 14px;
+      border-radius: 8px;
       padding: 13px 12px;
       background: #fff;
       border: 1px solid var(--line);
@@ -753,7 +763,7 @@
     </div>
   </div>
   <div class="soft" style="margin-top:16px;">
-    <p class="small" style="margin:0;"><strong>Demo repo:</strong> <code>github.com/sunyuzheng/stop-chatting-start-scaling</code></p>
+    <p class="small" style="margin:0;"><strong>Demo repo:</strong> <code>go.ai-builders.com/amazon</code></p>
   </div>
   <aside class="notes">
     Introduce the demo as a policy change across a tiny but real system.
@@ -817,10 +827,11 @@
     <div class="accent">
       <div class="pill">Your Setup</div>
       <ul class="muted">
+        <li>open <code>go.ai-builders.com/amazon</code></li>
         <li><code>git clone https://github.com/sunyuzheng/stop-chatting-start-scaling.git</code></li>
         <li><code>cd stop-chatting-start-scaling/oversized-shipping-demo/starter</code></li>
-        <li><code>npm test</code></li>
-        <li>read <code>docs/change-request.md</code></li>
+        <li><code>npm test</code> <span class="muted">(optional baseline check)</span></li>
+        <li>no npm? just read <code>docs/change-request.md</code></li>
       </ul>
     </div>
     <div class="card">
@@ -989,7 +1000,8 @@
     </div>
     <div class="accent">
       <div class="pill">Amazon Attendee Offer</div>
-      <p class="muted"><strong>Self-paced AI Builders:</strong> $100 off for Amazon attendees.</p>
+      <p class="muted"><strong>Amazon code:</strong> use coupon <code>amazon</code> for $100 off.</p>
+      <p class="muted"><strong>Applies to:</strong> the AI Builders bundle.</p>
       <p class="muted"><strong>Register:</strong> <code>ai-builders.com</code></p>
       <p class="muted"><strong>Format:</strong> practical, project-based, and built around durable methods, not prompt tricks.</p>
       <p class="muted"><strong>Risk:</strong> 14-day refund.</p>
@@ -1000,6 +1012,7 @@
     The point is simple:
     this is the full course for people who want to build the capability, not just hear the idea.
     Give the history, give the offer, and move on.
+    Mention coupon code amazon, applicable to the bundle.
   </aside>
 </section>
 
@@ -1141,8 +1154,8 @@
     <p style="max-width: 760px; margin: 0 auto 0.9em; color:#cbd5e1;">
       That is why agents can capture compounding value and chat alone cannot.
     </p>
-    <p class="small" style="color:#94a3b8; margin:0 0 10px;">Deck and demo repo: <code>github.com/sunyuzheng/stop-chatting-start-scaling</code></p>
-    <p class="small" style="color:#94a3b8; margin:0 0 10px;">Course details: <code>ai-builders.com</code>. Amazon attendees: self-paced AI Builders, $100 off.</p>
+    <p class="small" style="color:#94a3b8; margin:0 0 10px;">Deck and demo repo: <code>go.ai-builders.com/amazon</code></p>
+    <p class="small" style="color:#94a3b8; margin:0 0 10px;">Course details: <code>ai-builders.com</code>. Coupon <code>amazon</code>: $100 off the AI Builders bundle.</p>
     <p class="small" style="color:#94a3b8; margin:0;">Free community support and project sharing: <code>superlinear.academy/c/share-your-projects-en/</code></p>
   </div>
   <aside class="notes">

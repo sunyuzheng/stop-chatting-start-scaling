@@ -2,6 +2,8 @@
 
 This is the operational guide for using the deck and demo from a fresh computer.
 
+Short link for the talk: <https://go.ai-builders.com/amazon>
+
 GitHub repo: <https://github.com/sunyuzheng/stop-chatting-start-scaling>
 
 Production deck: <https://deck-pi-three.vercel.app>
@@ -101,7 +103,7 @@ Use `oversized-shipping-demo/WALKTHROUGH.md` for the detailed operator flow.
 Give participants this repo:
 
 ```text
-https://github.com/sunyuzheng/stop-chatting-start-scaling
+https://go.ai-builders.com/amazon
 ```
 
 Ask them to run:
@@ -112,6 +114,13 @@ cd stop-chatting-start-scaling/oversized-shipping-demo/starter
 npm test
 python3 -m http.server 9001
 ```
+
+Explain `npm test` before asking people to run it:
+
+- It is an optional baseline check, not a build step.
+- It runs `tests/check-policy.mjs`.
+- It confirms the starter repo still has the old duplicated `2-day delivery` policy.
+- If someone does not have Node/npm installed, they can skip it and still follow along by reading `docs/change-request.md` and inspecting the HTML files.
 
 If they already cloned the repo before the session:
 
@@ -252,4 +261,5 @@ Open and pin:
 - Deck: `http://127.0.0.1:8765/deck/index.html`
 - Starter: `http://127.0.0.1:9001`
 - Solved: `http://127.0.0.1:9002`
+- Demo repo short link: `https://go.ai-builders.com/amazon`
 - GitHub repo: `https://github.com/sunyuzheng/stop-chatting-start-scaling`
