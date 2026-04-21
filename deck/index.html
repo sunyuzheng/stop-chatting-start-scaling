@@ -751,7 +751,7 @@
 <section>
   <div class="eyebrow">Demo</div>
   <h2>The demo is one policy change across a small but real system</h2>
-  <div class="grid-2" style="margin-top:18px;">
+  <div class="grid-2" style="margin-top:14px;">
     <div class="accent">
       <div class="pill">Business Request</div>
       <ul class="muted">
@@ -835,16 +835,51 @@
 
 <section>
   <div class="eyebrow">Follow Along</div>
-  <h2>Try the chat version first</h2>
+  <h2>Get the demo files on your laptop</h2>
   <div class="grid-2" style="margin-top:18px;">
     <div class="accent">
-      <div class="pill">Your Setup</div>
+      <div class="pill">Non-technical path</div>
       <ul class="muted">
         <li>open <code>go.ai-builders.com/amazon</code></li>
+        <li>GitHub: <strong>Code</strong> -> <strong>Download ZIP</strong></li>
+        <li>unzip on Desktop</li>
+        <li>open <code>oversized-shipping-demo/starter</code></li>
+        <li>read <code>docs/change-request.md</code></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="pill">What You Are Opening</div>
+      <ul class="muted">
+        <li><code>checkout.html</code></li>
+        <li><code>order-confirmation.html</code></li>
+        <li><code>help-center.html</code></li>
+        <li><code>docs/shipping-policy.md</code></li>
+      </ul>
+    </div>
+  </div>
+  <div class="soft" style="margin-top:16px;">
+    <p style="margin:0;"><strong>No setup pressure.</strong> You can follow the idea by just reading the files. The goal is to notice how many places the same policy appears.</p>
+  </div>
+  <aside class="notes">
+    This is the audience participation moment.
+    Assume many people are non-technical.
+    Start with the GUI path: open the short link, click Code, Download ZIP, unzip on Desktop, open oversized-shipping-demo/starter, then read docs/change-request.md.
+    Tell them there is no setup pressure. They do not need npm or a local server to understand the exercise.
+    The goal is to inspect the files and notice the duplicated policy before seeing Cursor.
+  </aside>
+</section>
+
+<section>
+  <div class="eyebrow">Explore</div>
+  <h2>Now think like ChatGPT</h2>
+  <div class="grid-2" style="margin-top:18px;">
+    <div class="card">
+      <div class="pill">Terminal path</div>
+      <ul class="muted">
+        <li><code>cd ~/Desktop</code></li>
         <li><code>git clone https://github.com/sunyuzheng/stop-chatting-start-scaling.git</code></li>
         <li><code>cd stop-chatting-start-scaling/oversized-shipping-demo/starter</code></li>
         <li><code>npm test</code> <span class="muted">(optional baseline check)</span></li>
-        <li>no npm? just read <code>docs/change-request.md</code></li>
       </ul>
     </div>
     <div class="card">
@@ -857,13 +892,12 @@
       </ul>
     </div>
   </div>
-  <div class="soft" style="margin-top:16px;">
-    <p style="margin:0;"><strong>Explore for a few minutes.</strong> Then we will run the same request in Cursor and compare advice vs. execution inside the repo.</p>
+  <div class="soft" style="margin-top:14px;">
+    <p style="margin:0;"><strong>Explore for a few minutes.</strong> <code>npm test</code> is not required; it only confirms the starting repo still has the old duplicated <code>2-day delivery</code> policy. Then we will compare ChatGPT advice vs. Cursor execution.</p>
   </div>
   <aside class="notes">
-    This is the audience participation moment.
-    Ask people to open the short link first, then clone from the GitHub command if they want to follow locally.
-    Explain npm test clearly: it is optional. It is only a baseline check that confirms the starter repo still contains the old duplicated 2-day policy. If they do not have Node/npm, they can skip it and still follow by reading the request and files.
+    For technical participants, offer the terminal path and tell them to clone onto Desktop so the folder is easy to find.
+    Explain npm test clearly: it is not necessary for follow-along. It is only a baseline check that confirms the starter repo still contains the old duplicated 2-day policy. If they do not have Node/npm, skip it.
     Give them a few minutes to think like ChatGPT.
     Ask: which files would you paste in? How would you know you found every instance? Where would a shared policy source live? How would you verify the result?
     The goal is for them to feel the coordination burden before seeing Cursor.

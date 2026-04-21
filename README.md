@@ -20,7 +20,19 @@ GitHub repo: <https://github.com/sunyuzheng/stop-chatting-start-scaling>
 
 ## New Computer Quick Start
 
+For non-technical follow-along:
+
+1. Open <https://go.ai-builders.com/amazon>.
+2. Click GitHub `Code`.
+3. Click `Download ZIP`.
+4. Unzip it on Desktop.
+5. Open `oversized-shipping-demo/starter`.
+6. Read `docs/change-request.md`.
+
+For terminal users:
+
 ```bash
+cd ~/Desktop
 git clone https://github.com/sunyuzheng/stop-chatting-start-scaling.git
 cd stop-chatting-start-scaling
 ```
@@ -43,7 +55,9 @@ python3 -m http.server 9001
 
 Open `http://127.0.0.1:9001`.
 
-`npm test` is an optional baseline check. It runs a tiny Node script that confirms the starter repo still contains the old duplicated `2-day delivery` policy before the agent changes it. If you do not have Node/npm installed, skip this step and continue by reading `docs/change-request.md`.
+`npm test` is optional. It is useful for the presenter or technical participants, but not necessary for follow-along. It runs a tiny Node script that confirms the starter repo still contains the old duplicated `2-day delivery` policy before the agent changes it. If you do not have Node/npm installed, skip this step and continue by reading `docs/change-request.md`.
+
+Important: run `npm test` from `oversized-shipping-demo/starter`, not from the repo root. The repo root intentionally has no `package.json`, so `npm test` there will fail with `ENOENT`.
 
 Run the solved demo in a second terminal:
 

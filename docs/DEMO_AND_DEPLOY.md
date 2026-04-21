@@ -108,7 +108,21 @@ https://go.ai-builders.com/amazon
 
 Ask them to run:
 
+GUI path for non-technical participants:
+
+```text
+1. Open https://go.ai-builders.com/amazon
+2. Click Code
+3. Click Download ZIP
+4. Unzip on Desktop
+5. Open oversized-shipping-demo/starter
+6. Read docs/change-request.md
+```
+
+Terminal path:
+
 ```bash
+cd ~/Desktop
 git clone https://github.com/sunyuzheng/stop-chatting-start-scaling.git
 cd stop-chatting-start-scaling/oversized-shipping-demo/starter
 npm test
@@ -120,6 +134,8 @@ Explain `npm test` before asking people to run it:
 - It is an optional baseline check, not a build step.
 - It runs `tests/check-policy.mjs`.
 - It confirms the starter repo still has the old duplicated `2-day delivery` policy.
+- It must be run from `oversized-shipping-demo/starter`; the repo root has no `package.json`.
+- It is not necessary for non-technical follow-along.
 - If someone does not have Node/npm installed, they can skip it and still follow along by reading `docs/change-request.md` and inspecting the HTML files.
 
 If they already cloned the repo before the session:

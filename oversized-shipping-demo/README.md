@@ -60,9 +60,23 @@ Open `http://127.0.0.1:9002`.
 
 Use this path if you are following along from your own laptop.
 
-1. Clone the repo:
+### Option A: GitHub GUI / Download ZIP
+
+1. Open <https://go.ai-builders.com/amazon>.
+2. Click `Code`.
+3. Click `Download ZIP`.
+4. Unzip it on Desktop.
+5. Open `oversized-shipping-demo/starter`.
+6. Read `docs/change-request.md`.
+
+This is enough for non-technical follow-along.
+
+### Option B: Terminal
+
+1. Clone the repo onto Desktop:
 
 ```bash
+cd ~/Desktop
 git clone https://github.com/sunyuzheng/stop-chatting-start-scaling.git
 cd stop-chatting-start-scaling/oversized-shipping-demo/starter
 ```
@@ -81,7 +95,9 @@ cd oversized-shipping-demo/starter
 npm test
 ```
 
-This step is optional. It runs `tests/check-policy.mjs`, a tiny Node script that confirms the starter repo still has the old duplicated `2-day delivery` policy. It is there so everyone begins from the same baseline.
+This step is optional. It runs `tests/check-policy.mjs`, a tiny Node script that confirms the starter repo still has the old duplicated `2-day delivery` policy. It is there so technical participants can confirm they are starting from the same baseline.
+
+Run it from `oversized-shipping-demo/starter`, not from the repo root. The repo root has no `package.json`, so `npm test` there will fail with `ENOENT`.
 
 If you do not have Node/npm installed, skip `npm test`. You can still follow along by reading `docs/change-request.md` and inspecting the HTML files.
 
